@@ -1,0 +1,11 @@
+{
+  "name": "node-scrypt",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "devDependencies": {
+    "@types/node": "^10.12.10",
+    "ava": "^0.25.0",
+    "typescript": "^3.3.0-dev.20181122"
+  }
+}
