@@ -46,8 +46,8 @@ async function loginUser(username, password) {
 
 ## API
 
-| Function     | Description                                              | Input type                                             | Output type        | Notes                                                                             |   |
-|--------------+----------------------------------------------------------+--------------------------------------------------------+--------------------+-----------------------------------------------------------------------------------+---|
-| hash         | Returns the scrypt hash for `plaintext`                  | `(plaintext: string, keylen=64)`                       | `Promise<string>`  | Keylen must be between 1 and 255. Output is `base64(keylen + derived key + salt)`. Salt is the output of `crypto.randomBytes(16)` |   |
-| compare      | Checks if `hash` matches `plaintext`                     | `(plaintext: string, hash: string)`                    | `Promise<boolean>` |                                                                                   |   |
-| hashWithSalt | Returns the scrypt hash for `plaintext` with salt `salt` | `(plaintext: string, salt: Buffer, string, keylen=64)` | `Promise<string>`  | Keylen must be between 1 and 255. Output is `base64(keylen + derived key + salt)` |   |
+| Function     | Description                                                | Input type                                             | Output type        | Notes                                                                                                                              |
+|--------------|------------------------------------------------------------|--------------------------------------------------------|--------------------|------------------------------------------------------------------------------------------------------------------------------------|
+| hash         | Returns the scrypt hash for `plaintext`                    | `(plaintext: string, keylen=64)`                       | `Promise<string>`  |  Keylen must be between 1 and 255. Output is `base64(keylen + derived key + salt)`. Salt is the output of `crypto.randomBytes(16)` |
+| compare      | Checks if `hash` matches `plaintext`                       |                                                        | `Promise<boolean>` |                                                                                                                                    |
+| hashWithSalt | Returns the scrypt hash for `plaintext` salted with `salt` | `(plaintext: string, salt: Buffer, string, keylen=64)` | `Promise<string>`  |  Keylen must be between 1 and 255. Output is `base64(keylen + derived key + salt)`                                                 |
