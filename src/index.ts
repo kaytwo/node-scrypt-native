@@ -4,12 +4,18 @@ import {scrypt} from './scrypt'
 
 
 export const hash = (password: string, keylen = DEFAULT_SCRYPT_KEYLEN): Promise<string> => {
-	const salt = randomBytes(DEFAULT_SALT_BYTES)
+	validateType(password, 'string')
+	validateType(keylen, 'number')
+
+	const salt = crypto.randomBytes(DEFAULT_SALT_BYTES)
 
 	return hashWithSalt(password, salt, keylen)
 }
 
 export const compare = (plaintext: string, hash: string): Promise<boolean> => {
+	validateType(plaintext, 'string')
+	validateType(hash, 'string')
+
 	const buf = Buffer.from(hash, 'base64')
 	const keylen = buf.readUInt8(0) + 1
 	const salt = buf.slice(keylen)
@@ -19,13 +25,9 @@ export const compare = (plaintext: string, hash: string): Promise<boolean> => {
 }
 
 export const hashWithSalt = (password: string, salt: Buffer | string, keylen = DEFAULT_SCRYPT_KEYLEN): Promise<string> => {
-	if (typeof password !== 'string') {
-		throw new TypeError('The "password" argument must of type string')
-	}
-
-	if (typeof salt !== 'string' && !Buffer.isBuffer(salt)) {
-		throw new TypeError('The "salt" argument must be of type Buffer or string')
-	}
+	validateType(password, 'string')
+	validateStringOrBuffer(salt)
+	validateType(keylen, 'number')
 
 	if (typeof salt === 'string') {
 		salt = Buffer.from(salt)
@@ -46,4 +48,16 @@ const createHeader = (keylen: number): Buffer => {
 	const buf = Buffer.allocUnsafe(1)
 	buf.writeUInt8(keylen, 0)
 	return buf
+}
+
+const validateType = (str: any, type: 'string' | 'number') => {
+	if (typeof str !== type) {
+		throw new TypeError(`The "${str}" argument must be of type string`)
+	}
+}
+
+const validateStringOrBuffer = (arg: any) => {
+	if (typeof arg !== 'string' && !Buffer.isBuffer(arg)) {
+		throw new TypeError('The "${arg}" argument must be of type Buffer or string')
+	}
 }
