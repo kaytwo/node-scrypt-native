@@ -1,4 +1,4 @@
-import {randomBytes} from 'crypto'
+import * as crypto from 'crypto'
 import {DEFAULT_SCRYPT_KEYLEN, DEFAULT_SALT_BYTES} from './defaults'
 import {scrypt} from './scrypt'
 

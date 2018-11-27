@@ -1,6 +1,4 @@
-/* We use require for crypto to avoid non-sense deprecation warnings.
-   See https://github.com/nodejs/node/issues/23203 */
-import crypto = require('crypto')
+import * as crypto from 'crypto'
 import {DEFAULT_SCRYPT_PARAMETERS, DEFAULT_SCRYPT_KEYLEN} from './defaults'
 
 interface ScryptOptions {
