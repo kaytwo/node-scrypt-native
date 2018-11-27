@@ -8,7 +8,7 @@ node-scrypt-native is a dependency-free wrapper around Node's own [crypto.scrypt
 
 ## Why not `node-scrypt`?
 
-`node-scrypt`'s last update is 2 years old and, most importantly, it doesn't use `crypto.scrypt`.
+`node-scrypt`'s last update is 2 years old and, most importantly, it doesn't use `crypto.scrypt`. Having 0 dependencies reduces the attack surface and makes `node-scrypt-native` easier to install.
 
 ## Installation
 
