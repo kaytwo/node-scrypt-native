@@ -1,7 +1,7 @@
 # node-scrypt-native
 
 - Zero dependencies (only uses Node's native `crypto` module)
-- Tiny, simple code ([around 62 LOC](../blob/master/src/index.ts))
+- Tiny, simple code ([around 62 LOC](./src/index.ts))
 - Compatible with `bcrypt` (just change your imports! (link to readme section))
 - TypeScript typings
 
