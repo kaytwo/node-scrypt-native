@@ -1,8 +1,8 @@
 {
-  "name": "node-scrypt",
+  "name": "node-scrypt-native",
   "version": "1.0.0",
   "main": "index.js",
-  "license": "MIT",
+  "license": "ISC",
   "devDependencies": {
     "@types/node": "^10.12.10",
     "ava": "^0.25.0",
