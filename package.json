@@ -1,5 +1,5 @@
 {
-  "name": "node-scrypt-native",
+  "name": "scrypt-native",
   "description": "Scrypt for Node.js using crypto.scrypt",
   "version": "1.0.0",
   "main": "dist/index.js",
