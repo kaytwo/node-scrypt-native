@@ -19,3 +19,27 @@ or, if using npm:
     npm i scrypt-native
 
 This package already comes with TypeScript definitions. There's no need to install a separate package from `@types`.
+
+## Usage
+
+```typescript
+import * as scrypt from 'scrypt-native'
+// if not using ES6 modules, do
+const scrypt = require('bcrypt')
+
+async function registerUser(username, password) {
+	const passwordHash = await scrypt.hash(password)
+	//...
+}
+
+async function loginUser(username, password) {
+	// ... fetch passwordHash from database,
+	const isPasswordCorrect = await scrypt.compare(password, user.passwordHash)
+
+	if (!isPasswordCorrect) {
+		// error
+	}
+
+	// login user
+}
+```
