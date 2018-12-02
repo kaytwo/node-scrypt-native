@@ -25,7 +25,7 @@ This package already comes with TypeScript definitions. There's no need to insta
 ```typescript
 import * as scrypt from 'scrypt-native'
 // if not using ES6 modules, do
-const scrypt = require('bcrypt')
+const scrypt = require('scrypt-native')
 
 async function registerUser(username, password) {
 	const passwordHash = await scrypt.hash(password)
