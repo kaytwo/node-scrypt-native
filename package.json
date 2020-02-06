@@ -1,9 +1,9 @@
 {
   "name": "scrypt-native",
   "description": "Scrypt for Node.js using crypto.scrypt",
-  "version": "1.0.1",
-  "main": "dist/index.js",
-  "types": "dist/index.d.ts",
+  "version": "1.0.2",
+  "main": "dist/src/index.js",
+  "types": "dist/src/index.d.ts",
   "license": "ISC",
   "author": "Frank Paulo Filho",
   "devDependencies": {
